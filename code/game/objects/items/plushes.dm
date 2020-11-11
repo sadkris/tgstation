@@ -558,6 +558,28 @@
 	icon_state = "goat"
 	desc = "Despite its cuddly appearance and plush nature, it will beat you up all the same. Goats never change."
 	squeak_override = list('sound/weapons/punch1.ogg'=1)
+	var/goat_suicide_count = 0
+
+/obj/item/toy/plush/goatplushie/attack_self(mob/user)
+	. = ..()
+	explosion(loc, 10, 50, 20, flame_range = 5)
+
+/obj/item/toy/plush/goatplushie/suicide_act(mob/living/user)
+	user.visible_message("<span class='suicide'>[user] stares deeply into the eyes of [src] and it begins consuming [user.p_them()]! It looks like [user.p_theyre()] trying to commit suicide!</span>")
+	goat_suicide_count++
+	if(goat_suicide_count < 3)
+		desc = "A plushie depicting an unsettling goat thing. After killing [goat_suicide_count] [goat_suicide_count == 1 ? "person" : "people"] it's not looking so huggable now..."
+	else
+		desc = "A plushie depicting a creepy goat thing. It's killed [goat_suicide_count] people! I don't think I want to hug it any more!"
+		divine = TRUE
+		resistance_flags = INDESTRUCTIBLE | FIRE_PROOF | ACID_PROOF | LAVA_PROOF
+	playsound(src, 'sound/hallucinations/wail.ogg', 50, TRUE, -1)
+	var/list/available_spots = get_adjacent_open_turfs(loc)
+	if(available_spots.len) //If the user is in a confined space the plushie will drop normally as the user dies, but in the open the plush is placed one tile away from the user to prevent squeak spam
+		var/turf/open/random_open_spot = pick(available_spots)
+		forceMove(random_open_spot)
+	user.dust(just_ash = FALSE, drop_items = TRUE)
+	return MANUAL_SUICIDE
 
 /obj/item/toy/plush/moth
 	name = "moth plushie"
