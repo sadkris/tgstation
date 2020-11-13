@@ -94,6 +94,10 @@
 	results = list(/datum/reagent/consumable/ethanol/gargle_blaster = 5)
 	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 1, /datum/reagent/consumable/ethanol/gin = 1, /datum/reagent/consumable/ethanol/whiskey = 1, /datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/consumable/limejuice = 1)
 
+/datum/chemical_reaction/hopes_and_dreams
+	results = list(/datum/reagent/consumable/ethanol/hopes_and_dreams = 5)
+	required_reagents = list(/datum/reagent/consumable/ethanol/vodka = 2, /datum/reagent/consumable/ethanol/ale = 1, /datum/reagent/consumable/ethanol/whiskey = 2)
+
 /datum/chemical_reaction/brave_bull
 	results = list(/datum/reagent/consumable/ethanol/brave_bull = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol/tequila = 2, /datum/reagent/consumable/ethanol/kahlua = 1)
@@ -584,4 +588,4 @@
 /datum/chemical_reaction/ginger_amaretto
 	results = list(/datum/reagent/consumable/ethanol/ginger_amaretto = 4)
 	required_reagents = list(/datum/reagent/consumable/ethanol/amaretto = 1, /datum/reagent/consumable/sol_dry = 1, /datum/reagent/consumable/ice = 1, /datum/reagent/consumable/lemonjuice = 1)
-	
+

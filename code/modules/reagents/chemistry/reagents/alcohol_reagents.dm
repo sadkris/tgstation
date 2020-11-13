@@ -409,7 +409,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /datum/reagent/consumable/ethanol/amaretto
 	name = "Amaretto"
 	description = "A gentle drink that carries a sweet aroma."
-	color = "#E17600" 
+	color = "#E17600"
 	boozepwr = 25
 	taste_description = "fruity and nutty sweetness"
 	glass_icon_state = "amarettoglass"
@@ -1343,6 +1343,28 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			M.adjustToxLoss(2, 0)
 			. = 1
 	..()
+
+/datum/reagent/consumable/ethanol/cum
+	name = "Eric Dawsby's Sweet, Sweet Cum"
+	description = "Still No"
+	color = "#ffffffd0"
+	boozepwr = 1000
+	quality = DRINK_NICE
+	taste_description = "a cup of maggots dipped in acid and smothered in uranium, frozen in space for 10 minutes and stomped on"
+	glass_icon_state = "glass_brown2"
+	glass_name = "Eric Dawsby's Sweet, Sweet Cum"
+	glass_desc = "I won't discuss how it was extracted, and I won't think about it."
+
+/datum/reagent/consumable/ethanol/hopes_and_dreams
+	name = "The Epitome of your Life"
+	description = "God damnit, this shit again."
+	color = "#761f9bcc"
+	boozepwr = 7
+	quality = DRINK_VERYGOOD
+	taste_description = "the fleeting memories of the people you used to hold close"
+	glass_icon_state = "gintonicglass"
+	glass_name = "The Epitome of your Life"
+	glass_desc = "As you stare deep into the liquid that fills this glass recepticle, you can't help but think about the paths you've taken and people you've used to get where you are now. It's been so much, you just want to drown it out."
 
 /datum/reagent/consumable/ethanol/gargle_blaster
 	name = "Pan-Galactic Gargle Blaster"
@@ -2313,7 +2335,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "godfather"
 	glass_name = "Godfather"
 	glass_desc = "A classic from old Italy and enjoyed by gangsters, pray the orange peel doesnt end up in your mouth."
-			
+
 /datum/reagent/consumable/ethanol/godmother
 	name = "Godmother"
 	description = "A twist on a classic, liked more by mature women."
@@ -2324,4 +2346,4 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	glass_icon_state = "godmother"
 	glass_name = "Godmother"
 	glass_desc = "A lovely fresh smelling cocktail, a true Sicilian delight."
-	
+

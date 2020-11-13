@@ -1559,6 +1559,20 @@
 	else
 		open()
 
+/obj/machinery/door/airlock/gauzepass
+    name = "Gauze Door"
+
+/obj/machinery/door/airlock/gauzepass/attackby(obj/item/hitting_thing, mob/living/user)
+    say("hi [hitting_thing.type]")
+    if(istype(hitting_thing, /obj/item/stack/medical/gauze))
+        open()
+    else
+        do_animate("deny")
+
+/obj/machinery/door/airlock/gauzepass/attack_hand(mob/user)
+    do_animate("deny")
+    return FALSE
+
 /**
   *	Generates the airlock's wire layout based on the current area the airlock resides in.
   *
